@@ -1,0 +1,42 @@
+<h1 class="text-center mb-5 mt-5"> Loan Management system </h1>
+
+<div class="alert alert-success" *ngIf='message'>{{message}}</div>
+
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Loan Number</th>
+        <th>Loan Amount</th>
+        <th>Loan Type</th>
+        <th>Loan Term</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Address</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+              <tr *ngFor="let loan of loans">
+                <td>{{loan.loanNumber}}</td>
+                <td>{{loan.loanAmount}}</td>
+                <td>{{loan.loanType}}</td>
+                <td>{{loan.loanTerm}}</td>
+                <td>{{loan.borrowerFirstName}}</td>
+                <td>{{loan.borrowerLastName}}</td>
+                <td>{{loan.propertyAddress}}</td>
+                <td><button (click)="updateLoan(loan.loanNumber)" class="btn btn-success">Update</button></td>
+                <td><button (click)="deleteLoan(loan.loanNumber)" class="btn btn-warning">Delete</button></td>
+              </tr>
+   
+    </tbody>
+
+  </table>
+
+  <div class="row float-right">
+      <button (click)="addTodo()" class="btn btn-primary">Add A New Loan</button>
+  </div>
+
+</div>

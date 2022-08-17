@@ -1,0 +1,63 @@
+<H1>LOAN MANAGEMENT SYSTEM</H1>
+
+<div class="container">
+  <!-- <div class="alert alert-warning" *ngIf="loanForm.dirty && loanForm.invalid">Enter valid values</div>
+  
+  <div class="alert alert-warning" *ngIf="loanForm.dirty && loanNumber.invalid">Enter atleast 5 characters in Description</div>
+   -->
+  <form (ngSubmit)="saveLoan()" #loanForm="ngForm">
+    <fieldset class="form-group">
+      <label>Loan Number</label>
+      <input type="text" #loanNumber="ngModel" 
+            [(ngModel)]="loan.loanNumber" class="form-control" 
+                name="loanNumber" required="required" minlength="5">
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label>Loan Amount</label>
+        <input type="text" #loanAmount="ngModel"
+        [(ngModel)]="loan.loanAmount"
+        class="form-control" name="loanAmount" required="required" >
+    </fieldset>
+    
+    <fieldset class="form-group">
+        <label>Loan Type</label>
+        <input type="text" #loanType="ngModel"
+        [(ngModel)]="loan.loanType"
+        class="form-control" name="loanType" required="required" >
+    </fieldset>
+
+    
+    <fieldset class="form-group">
+        <label>Loan Term</label>
+        <input type="text" #loanTerm="ngModel"
+        [(ngModel)]="loan.loanTerm"
+        class="form-control" name="loanTerm" required="required" >
+    </fieldset>
+
+    
+    <fieldset class="form-group">
+        <label>First Name</label>
+        <input type="text" #borrowerFirstName="ngModel"
+        [(ngModel)]="loan.borrowerFirstName"
+        class="form-control" name="borrowerFirstName" required="required" >
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label>Last Name</label>
+        <input type="text" #borrowerLastName="ngModel"
+        [(ngModel)]="loan.borrowerLastName"
+        class="form-control" name="borrowerLastName" required="required" >
+    </fieldset>
+
+
+     <fieldset class="form-group">
+        <label>Address</label>
+        <input type="text" #propertyAddress="ngModel"
+        [(ngModel)]="loan.propertyAddress"
+        class="form-control" name="propertyAddress" required="required" >
+    </fieldset>
+
+    <button type="submit" class="btn btn-success glyphicon glyphicon-save">Save</button>
+  </form>  
+</div>

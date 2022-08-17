@@ -1,0 +1,53 @@
+<div class="container">
+  
+       
+    <form class="mt-4">
+        <div class="form-group ">
+          <label for="firstName">First Name</label>
+          <input type="text" [(ngModel)]="firstName" name="firstName" class="form-control" id="firstName"  placeholder="Enter First Name" required>
+        </div>
+        <div class="form-group ">
+          <label for="lastName">Last Name</label>
+          <input type="text"  [(ngModel)] = "lastName" name="lastName" class="form-control" id="lastName" placeholder="Enter Last Name" required>
+        </div>
+        <div class="form-group ">
+            <label for="loanNumber">Loan Number</label>
+            <input type="text" [(ngModel)] ="loanNumber" name="loanNumber" class="form-control" id="loanNumber" placeholder="Enter Loan Number" required>
+          </div>
+       
+        
+        <button (click)="getLoansBySearch(firstName,lastName,loanNumber)" type="submit" class="btn btn-primary">Search</button>&nbsp;
+        <button type="reset" class="btn btn-warning">Reset</button>
+      </form>
+
+      <h1>My Loan Search Result</h1>
+<div class="container">
+<table class="table">
+    
+    <thead>
+        <tr>
+            <th>Loan Number</th>
+            <th>Loan Amount</th>
+            <th>Loan Type</th>
+            <th>Loan Term</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let loan of loans">
+            
+            <td>{{loan.loanNumber}}</td>
+            <td>{{loan.loanAmount}}</td>
+            <td>{{loan.loanType}}</td>
+            <td>{{loan.loanTerm}}</td>
+            
+        </tr>
+    </tbody>
+</table>
+</div>
+
+   
+
+
+
+      </div>
